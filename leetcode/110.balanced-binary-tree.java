@@ -1,6 +1,3 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
-
 /*
  * @lc app=leetcode id=110 lang=java
  *
