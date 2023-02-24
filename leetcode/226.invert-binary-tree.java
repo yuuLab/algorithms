@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode id=104 lang=java
+ * @lc app=leetcode id=226 lang=java
  *
- * [104] Maximum Depth of Binary Tree
+ * [226] Invert Binary Tree
  */
 
 // @lc code=start
@@ -25,15 +25,14 @@ class TreeNode {
 }
 
 class Solution {
-    public int maxDepth(TreeNode root) {
-        // Base Condition
+    public TreeNode invertTree(TreeNode root) {
         if (root == null)
-            return 0;
-        // Hypothesis
-        int left = maxDepth(root.left);
-        int right = maxDepth(root.right);
-        // Induction
-        return Math.max(left, right) + 1;
+            return null;
+        TreeNode right = invertTree(root.right);
+        TreeNode left = invertTree(root.left);
+        root.right = left;
+        root.left = right;
+        return root;
     }
 }
 // @lc code=end
